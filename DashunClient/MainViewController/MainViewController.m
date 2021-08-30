@@ -71,7 +71,8 @@
     //看用户是否登录
     if(_identityManager.identity.userNo == 0) {
         _login = [LoginController new];
-        _login.view = 0;
+        //这是一个隐藏的bug
+        _login.view.alpha = 0;
         [self addChildViewController:_login];
         [self.view addSubview:_login.view];
         //如果是从欢迎界面进来

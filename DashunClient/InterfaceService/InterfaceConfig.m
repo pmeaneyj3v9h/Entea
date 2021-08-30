@@ -7,8 +7,10 @@
 //
 
 #import "InterfaceConfig.h"
-
-NSString* const KBSSDKAPIURL = @"http://dashun.applinzi.com/";
+//测试
+NSString* const KBSSDKAPIURL = @"http://test.dashun.applinzi.com/";
+//正式
+//NSString* const KBSSDKAPIURL = @"http://dashun.applinzi.com/";
 
 @implementation InterfaceConfig
 
