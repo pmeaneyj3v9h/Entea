@@ -6,7 +6,8 @@
 //  Copyright © 2016年 com.luohaifang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 #import "DataCache.h"
 
 @interface AppCustoms : NSObject

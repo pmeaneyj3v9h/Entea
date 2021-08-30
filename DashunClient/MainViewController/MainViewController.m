@@ -15,11 +15,15 @@
 #import "UserManager.h"
 
 @interface MainViewController () {
-    WelcomeController *_welcome;//欢迎界面
-    LoginController *_login;//登录界面
-    BusinessController *_business;//业务界面
+    /**欢迎界面*/
+    WelcomeController *_welcome;
+    /**登录界面*/
+    LoginController *_login;
+    /**业务界面*/
+    BusinessController *_business;
     
-    IdentityManager *_identityManager;//登录信息管理器
+    /**登录信息管理器*/
+    IdentityManager *_identityManager;
 }
 
 @end
@@ -44,7 +48,10 @@
     //加上登录结束的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoIdentityVC) name:@"LoginDidFinish" object:nil];
 }
-//进入判断逻辑
+
+/**
+ 进入判断逻辑
+ */
 - (void)gotoIdentityVC {
     //看用户是不是第一次使用软件
     if(_identityManager.identity.firstUseSoft == 1) {

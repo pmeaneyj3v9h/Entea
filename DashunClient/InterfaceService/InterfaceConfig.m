@@ -7,9 +7,15 @@
 //
 
 #import "InterfaceConfig.h"
-//测试
+
+#pragma mark -- 测试
+
+/**请求地址*/
 NSString* const KBSSDKAPIURL = @"http://test.dashun.applinzi.com/";
-//正式
+
+#pragma mark -- 正式
+
+/**请求地址*/
 //NSString* const KBSSDKAPIURL = @"http://dashun.applinzi.com/";
 
 @implementation InterfaceConfig

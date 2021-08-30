@@ -6,20 +6,17 @@
 //  Copyright (c) 2013 Jack Flintermann. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface UIColor (FlatUI)
 
-//首页导航栏
-+ (UIColor *) homeListColor;
-//日程导航栏
-+ (UIColor *) calendarColor;
-//签到导航栏
-+ (UIColor *) siginColor;
-+ (UIColor *) colorFromHexCode:(NSString *)hexString;
+/**
+ 通过16进制字符串创建UIColor对象
 
-+ (UIColor *) blendedColorWithForegroundColor:(UIColor *)foregroundColor
-                              backgroundColor:(UIColor *)backgroundColor
-                                 percentBlend:(CGFloat) percentBlend;
+ @param hexString 16进制字符串
+ @return UIColor对象
+ */
++ (UIColor *)colorFromHexCode:(NSString *)hexString;
+
 
 @end

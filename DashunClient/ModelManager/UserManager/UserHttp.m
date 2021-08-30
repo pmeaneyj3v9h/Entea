@@ -12,7 +12,7 @@
 @implementation UserHttp
 
 #pragma mark -- 修改用户信息
-//修改用户信息
+
 + (NSURLSessionDataTask*)updateUserInfo:(User*)user handler:(completionHandler)handler {
     NSString *urlPath = @"Users/update_user";
     NSMutableDictionary *params = [user.JSONDictionary mutableCopy];

@@ -42,6 +42,7 @@
     week = week - 1;
     return week ?: 7;
 }
+
 - (NSString*)weekdayStr {
     NSString *weekday = nil;
     switch (self.weekday) {
@@ -158,13 +159,20 @@
 }
 
 - (NSString *)timeAgo4Chat {
-    NSDate *date1 = [NSDate date];//今天
-    NSDate *date2 = [date1 dateByAddingTimeInterval:-DAY];//昨天
-    NSDate *date3 = [date2 dateByAddingTimeInterval:-DAY];//前天
-    NSDate *date4 = [date3 dateByAddingTimeInterval:-DAY];//上上前天
-    NSDate *date5 = [date4 dateByAddingTimeInterval:-DAY];//上上上前天
-    NSDate *date6 = [date5 dateByAddingTimeInterval:-DAY];//上上上上前天
-    NSDate *date7 = [date6 dateByAddingTimeInterval:-DAY];//上上上上上前天
+    //今天
+    NSDate *date1 = [NSDate date];
+    //昨天
+    NSDate *date2 = [date1 dateByAddingTimeInterval:-DAY];
+    //前天
+    NSDate *date3 = [date2 dateByAddingTimeInterval:-DAY];
+    //上上前天
+    NSDate *date4 = [date3 dateByAddingTimeInterval:-DAY];
+    //上上上前天
+    NSDate *date5 = [date4 dateByAddingTimeInterval:-DAY];
+    //上上上上前天
+    NSDate *date6 = [date5 dateByAddingTimeInterval:-DAY];
+    //上上上上上前天
+    NSDate *date7 = [date6 dateByAddingTimeInterval:-DAY];
     
     //前10个字节 就是当天的日期  做日期之间的比对
     NSString *todayStr1 = [[date1 description] substringToIndex:10];
@@ -267,13 +275,15 @@
     
     return result;
 }
-- (NSDate*)firstTime {//算出今天凌晨时间
+
+- (NSDate*)firstTime {
     int64_t currSecond = self.timeIntervalSince1970;
     currSecond = currSecond - self.hour * 60 * 60 - self.minute * 60 - self.second;
     NSDate * currDate = [NSDate dateWithTimeIntervalSince1970:currSecond];
     return currDate;
 }
-- (NSDate*)lastTime {//算出明天凌晨时间
+
+- (NSDate*)lastTime {
     int64_t currSecond = self.timeIntervalSince1970;
     currSecond = currSecond - self.hour * 60 * 60 - self.minute * 60 - self.second;
     currSecond = currSecond + (24 * 60 * 60);
@@ -281,16 +291,18 @@
     NSDate * currDate = [NSDate dateWithTimeIntervalSince1970:currSecond];
     return currDate;
 }
-+ (NSDate*)dateWithFormat:(NSString *)format
-{
+
++ (NSDate*)dateWithFormat:(NSString *)format {
     NSDateFormatter * df2 = [[NSDateFormatter alloc] init];
     [df2 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate * date =[df2 dateFromString:format];
     return date;
 }
+
 + (long long)timeStamp {
     return (long long)[[NSDate date] timeIntervalSince1970];
 }
+
 + (NSDate *)now {
     return [NSDate date];
 }

@@ -8,7 +8,9 @@
 
 #import "NSObject+data.h"
 #import <objc/runtime.h>
+
 static const char kUIViewDataKey;
+
 @implementation NSObject (data)
 
 @dynamic data;

@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 @interface PodsDummy_MBProgressHUD : NSObject
 @end
 @implementation PodsDummy_MBProgressHUD

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Anton Gaenko. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import <Realm/Realm.h>
 
 @interface MCJSONPrimaryKeyTransformer : NSValueTransformer

@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 @interface PodsDummy_RBQFetchedResultsController : NSObject
 @end
 @implementation PodsDummy_RBQFetchedResultsController

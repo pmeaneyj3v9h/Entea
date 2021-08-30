@@ -6,12 +6,16 @@
 //  Copyright © 2016年 Maverick. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface NSString (StringSize)
 
 /**
- * 返回字符串的 自定义 大小
+ 字符串绘制大小
+
+ @param font 字体大小
+ @param size 限制范围
+ @return 绘制大小
  */
 - (CGSize)textSizeWithFont:(UIFont *)font constrainedToSize:(CGSize)size;
 

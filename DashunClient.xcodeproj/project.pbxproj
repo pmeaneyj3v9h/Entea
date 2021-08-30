@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D4854B205BA0EE00140C73 /* DashunClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D4854A205BA0EE00140C73 /* DashunClientTests.m */; };
 		1B62CAAA1D9A4B5000D07868 /* WelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B62CAA81D9A4B5000D07868 /* WelcomeController.m */; };
 		1B62CAB21D9A54C700D07868 /* UserLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B62CAB01D9A54C700D07868 /* UserLoginController.m */; };
 		1B62CAB31D9A54C700D07868 /* UserLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B62CAB11D9A54C700D07868 /* UserLoginController.xib */; };
@@ -139,7 +140,20 @@
 		9F998BA67FA1A69CFBE4B274 /* libPods-DashunClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E33F7193B13DA7CA0F7B27F4 /* libPods-DashunClient.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		04D4854D205BA0EE00140C73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BDB13421D9A03C5003A998E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BDB13491D9A03C5003A998E;
+			remoteInfo = DashunClient;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		04D48548205BA0EE00140C73 /* DashunClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashunClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D4854A205BA0EE00140C73 /* DashunClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashunClientTests.m; sourceTree = "<group>"; };
+		04D4854C205BA0EE00140C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B62CAA71D9A4B5000D07868 /* WelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeController.h; sourceTree = "<group>"; };
 		1B62CAA81D9A4B5000D07868 /* WelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeController.m; sourceTree = "<group>"; };
 		1B62CAAF1D9A54C700D07868 /* UserLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginController.h; sourceTree = "<group>"; };
@@ -411,6 +425,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		04D48545205BA0EE00140C73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BDB13471D9A03C5003A998E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,18 +443,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B62CAAC1D9A54BC00D07868 /* FindPasswordController */ = {
+		04D48549205BA0EE00140C73 /* DashunClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				04D4854A205BA0EE00140C73 /* DashunClientTests.m */,
+				04D4854C205BA0EE00140C73 /* Info.plist */,
 			);
-			path = FindPasswordController;
-			sourceTree = "<group>";
-		};
-		1B62CAAD1D9A54BC00D07868 /* RegisterController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RegisterController;
+			path = DashunClientTests;
 			sourceTree = "<group>";
 		};
 		1B62CAAE1D9A54BC00D07868 /* UserLoginController */ = {
@@ -676,6 +692,7 @@
 			isa = PBXGroup;
 			children = (
 				1BDB134C1D9A03C5003A998E /* DashunClient */,
+				04D48549205BA0EE00140C73 /* DashunClientTests */,
 				1BDB134B1D9A03C5003A998E /* Products */,
 				CEE8EFA00BBC213CB595306B /* Pods */,
 				CA18A64B4F016D837A7B6A29 /* Frameworks */,
@@ -686,6 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				1BDB134A1D9A03C5003A998E /* DashunClient.app */,
+				04D48548205BA0EE00140C73 /* DashunClientTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -701,9 +719,7 @@
 				1BDB13641D9A0639003A998E /* MainViewController */,
 				1BDB13591D9A03C6003A998E /* Assets.xcassets */,
 				1BDB135B1D9A03C6003A998E /* LaunchScreen.storyboard */,
-				1BDB135E1D9A03C6003A998E /* Info.plist */,
 				1BDB134D1D9A03C5003A998E /* Supporting Files */,
-				1BDB13771D9A0AB7003A998E /* PrefixHeader.pch */,
 			);
 			path = DashunClient;
 			sourceTree = "<group>";
@@ -711,6 +727,8 @@
 		1BDB134D1D9A03C5003A998E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1BDB135E1D9A03C6003A998E /* Info.plist */,
+				1BDB13771D9A0AB7003A998E /* PrefixHeader.pch */,
 				1BDB134E1D9A03C5003A998E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -919,8 +937,6 @@
 			children = (
 				1BDB13CE1D9A1C8F003A998E /* LoginController.h */,
 				1BDB13CF1D9A1C8F003A998E /* LoginController.m */,
-				1B62CAAC1D9A54BC00D07868 /* FindPasswordController */,
-				1B62CAAD1D9A54BC00D07868 /* RegisterController */,
 				1B62CAAE1D9A54BC00D07868 /* UserLoginController */,
 			);
 			path = LoginController;
@@ -955,6 +971,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		04D48547205BA0EE00140C73 /* DashunClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D48551205BA0EE00140C73 /* Build configuration list for PBXNativeTarget "DashunClientTests" */;
+			buildPhases = (
+				04D48544205BA0EE00140C73 /* Sources */,
+				04D48545205BA0EE00140C73 /* Frameworks */,
+				04D48546205BA0EE00140C73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D4854E205BA0EE00140C73 /* PBXTargetDependency */,
+			);
+			name = DashunClientTests;
+			productName = DashunClientTests;
+			productReference = 04D48548205BA0EE00140C73 /* DashunClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1BDB13491D9A03C5003A998E /* DashunClient */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BDB13611D9A03C6003A998E /* Build configuration list for PBXNativeTarget "DashunClient" */;
@@ -984,6 +1018,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = com.lottak;
 				TargetAttributes = {
+					04D48547205BA0EE00140C73 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1BDB13491D9A03C5003A998E;
+					};
 					1BDB13491D9A03C5003A998E = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Manual;
@@ -1004,11 +1043,19 @@
 			projectRoot = "";
 			targets = (
 				1BDB13491D9A03C5003A998E /* DashunClient */,
+				04D48547205BA0EE00140C73 /* DashunClientTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		04D48546205BA0EE00140C73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BDB13481D9A03C5003A998E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1049,7 +1096,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C20CB9C7637307A0699BD149 /* [CP] Embed Pods Frameworks */ = {
@@ -1070,6 +1117,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		04D48544205BA0EE00140C73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D4854B205BA0EE00140C73 /* DashunClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BDB13461D9A03C5003A998E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1205,6 +1260,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		04D4854E205BA0EE00140C73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BDB13491D9A03C5003A998E /* DashunClient */;
+			targetProxy = 04D4854D205BA0EE00140C73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		1BDB135B1D9A03C6003A998E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1217,6 +1280,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		04D4854F205BA0EE00140C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DashunClientTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fuck.DashunClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DashunClient.app/DashunClient";
+			};
+			name = Debug;
+		};
+		04D48550205BA0EE00140C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DashunClientTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fuck.DashunClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DashunClient.app/DashunClient";
+			};
+			name = Release;
+		};
 		1BDB135F1D9A03C6003A998E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1338,6 +1455,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		04D48551205BA0EE00140C73 /* Build configuration list for PBXNativeTarget "DashunClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D4854F205BA0EE00140C73 /* Debug */,
+				04D48550205BA0EE00140C73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1BDB13451D9A03C5003A998E /* Build configuration list for PBXProject "DashunClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -9,26 +9,15 @@
 #import "HttpService.h"
 #import "InterfaceConfig.h"
 
+/**HttpService单例对象*/
+static HttpService * __singleton__;
+
 @implementation HttpService {
-    //一般的网络请求服务
+    /**一般的网络请求服务*/
     AFHTTPSessionManager *_dataSessionManager;
 }
 
-
-#pragma mark -
-#pragma mark - SINGLETON
-
-static HttpService * __singleton__;
-
-+ (HttpService *)service {
-    static dispatch_once_t predicate;
-    dispatch_once( &predicate, ^{ __singleton__ = [[[self class] alloc] init]; } );
-    return __singleton__;
-}
-
-
-#pragma mark -
-#pragma mark - Init
+#pragma mark -- Init Methods
 
 - (instancetype)init {
     self = [super init];
@@ -38,9 +27,55 @@ static HttpService * __singleton__;
     return self;
 }
 
-//普通请求
-- (NSURLSessionDataTask *)sendRequestWithHttpMethod:(HTTP_REQUEST_METHOD)method URLPath:(NSString *)pathStr parameters:(id)parameters completionHandler:(completionHandler)completionHandler
-{
+#pragma mark -- Class Private Methods
+
+#pragma mark -- Class Public Methods
+
++ (HttpService *)service {
+    static dispatch_once_t predicate;
+    dispatch_once( &predicate, ^{ __singleton__ = [[[self class] alloc] init]; } );
+    return __singleton__;
+}
+
+#pragma mark -- Function Private Methods
+
+#pragma mark -- Function Public Methods
+
+#pragma mark -- Instance Private Methods
+
+- (void)initManagers {
+    //普通数据请求
+    _dataSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:KBSSDKAPIURL]];
+    [_dataSessionManager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+    [_dataSessionManager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+}
+
+- (void)cleanAllTask {
+    [self invalidateManagers];
+    [self initManagers];
+}
+
+- (void)invalidateManagers {
+    [_dataSessionManager invalidateSessionCancelingTasks:YES];
+}
+
+- (NSString *)stringWithMethod:(HTTP_REQUEST_METHOD)method {
+    switch (method) {
+        case E_HTTP_REQUEST_METHOD_GET:     return @"GET";      break;
+        case E_HTTP_REQUEST_METHOD_HEAD:    return @"HEAD";     break;
+        case E_HTTP_REQUEST_METHOD_POST:    return @"POST";     break;
+        case E_HTTP_REQUEST_METHOD_PUT:     return @"PUT";      break;
+        case E_HTTP_REQUEST_METHOD_PATCH:   return @"PATCH";    break;
+        case E_HTTP_REQUEST_METHOD_DELETE:  return @"DELETE";   break;
+        default:
+            break;
+    }
+    return @"";
+}
+
+#pragma mark -- Instance Public Methods
+
+- (NSURLSessionDataTask *)sendRequestWithHttpMethod:(HTTP_REQUEST_METHOD)method URLPath:(NSString *)pathStr parameters:(id)parameters completionHandler:(completionHandler)completionHandler {
     //开始菊花
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //初始化请求
@@ -76,36 +111,5 @@ static HttpService * __singleton__;
     [task resume];
     return task;
 }
-
-- (NSString *)stringWithMethod:(HTTP_REQUEST_METHOD)method {
-    switch (method) {
-        case E_HTTP_REQUEST_METHOD_GET:     return @"GET";      break;
-        case E_HTTP_REQUEST_METHOD_HEAD:    return @"HEAD";     break;
-        case E_HTTP_REQUEST_METHOD_POST:    return @"POST";     break;
-        case E_HTTP_REQUEST_METHOD_PUT:     return @"PUT";      break;
-        case E_HTTP_REQUEST_METHOD_PATCH:   return @"PATCH";    break;
-        case E_HTTP_REQUEST_METHOD_DELETE:  return @"DELETE";   break;
-        default:
-            break;
-    }
-    return @"";
-}
-- (void)cleanAllTask {
-    [self invalidateManagers];
-    [self initManagers];
-}
-- (void)invalidateManagers {
-    [_dataSessionManager invalidateSessionCancelingTasks:YES];
-}
-#pragma mark -
-#pragma mark - Ptavite Methods
-
-- (void)initManagers {
-    //普通数据请求
-    _dataSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:KBSSDKAPIURL]];
-    [_dataSessionManager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
-    [_dataSessionManager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-}
-
 
 @end

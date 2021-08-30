@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Cody Krieger. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @class RACDelegateProxy;
 @class RACSignal;

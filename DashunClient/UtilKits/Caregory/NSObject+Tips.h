@@ -6,10 +6,12 @@
 //  Copyright (c) 2014 QFish.inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 #import "MBProgressHUD.h"
 
 #pragma mark - UIView
+
 /**
  *  直接在视图上显示提示信息
  */

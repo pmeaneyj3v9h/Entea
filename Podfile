@@ -1,11 +1,11 @@
 platform :ios, '8.0'
 
 target 'DashunClient' do
-   pod 'MJExtension', '~> 3.0.10'   
-   pod 'MBProgressHUD', '~> 0.9.2'
-   pod 'MJRefresh', '~> 3.1.0'
-   pod 'AFNetworking', '~> 3.1.0'
-   pod 'SDWebImage', '~> 3.7.6'
-   pod 'Realm', '~> 1.0.1'
-   pod 'RBQFetchedResultsController'
+   pod 'MJExtension'                                         #json-oc对象转换
+   pod 'MBProgressHUD'                                       #提示框
+   pod 'MJRefresh'                                           #上/下拉刷新/加载
+   pod 'AFNetworking'                                        #网络请求
+   pod 'SDWebImage'                                          #加载网络图片
+   pod 'Realm', '~> 2.8.1'                                   #realm数据库
+   pod 'RBQFetchedResultsController'                         #数据库驱动界面更新核心库
 end

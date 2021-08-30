@@ -10,8 +10,42 @@
 
 @implementation UIImage (scale)
 
-//这里的压缩和Android类似，尽可能保留最小尺寸，也不会导致图片变形 范围压缩
+#pragma mark -- Init Methods
+
+#pragma mark -- Class Private Methods
+
+#pragma mark -- Class Public Methods
+
+#pragma mark -- Function Private Methods
+
+#pragma mark -- Function Public Methods
+
++ (id)colorImg:(UIColor*)color {
+    CGSize imageSize = CGSizeMake(50.0, 50.0);
+    UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
+    [color set];
+    UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
+    UIImage *colorImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return colorImg;
+}
+
++ (id)colorImg:(UIColor*)color size:(CGSize)size {
+    CGSize imageSize = size;
+    UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
+    [color set];
+    UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
+    UIImage *colorImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return colorImg;
+}
+
+#pragma mark -- Instance Private Methods
+
+#pragma mark -- Instance Public Methods
+
 - (UIImage *)scaleToSize:(CGSize)size {
+    //这里的压缩和Android类似，尽可能保留最小尺寸，也不会导致图片变形 范围压缩
     CGSize imageSize = self.size;
     CGFloat width = imageSize.width;
     CGFloat height = imageSize.height;
@@ -47,20 +81,6 @@
     return newImage;
 }
 
-- (NSData *)dataInNoSacleLimitBytes:(NSInteger)bytes {
-    @autoreleasepool {
-        CGFloat scale = 0.5f;
-        NSData *data = UIImageJPEGRepresentation(self, scale);
-        while (data.length > bytes) {
-            scale -= 0.05;
-            //这里限制下压缩比例 最小为0.05 之后就不再压缩了
-            if(scale < 0.05) break;
-            data = UIImageJPEGRepresentation(self, scale);
-        }
-        return data;
-    }
-}
-
 - (UIImage *)cutToSize:(CGSize)size {
     CGFloat width = self.size.width;
     CGFloat height = self.size.height;
@@ -83,23 +103,19 @@
     UIGraphicsEndImageContext();
     return cutImage;
 }
-+ (id)colorImg:(UIColor*)color {
-    CGSize imageSize = CGSizeMake(50.0, 50.0);
-    UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
-    [color set];
-    UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
-    UIImage *colorImg = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return colorImg;
+
+- (NSData *)dataInNoSacleLimitBytes:(NSInteger)bytes {
+    @autoreleasepool {
+        CGFloat scale = 0.5f;
+        NSData *data = UIImageJPEGRepresentation(self, scale);
+        while (data.length > bytes) {
+            scale -= 0.05;
+            //这里限制下压缩比例 最小为0.05 之后就不再压缩了
+            if(scale < 0.05) break;
+            data = UIImageJPEGRepresentation(self, scale);
+        }
+        return data;
+    }
 }
 
-+ (id)colorImg:(UIColor*)color size:(CGSize)size {
-    CGSize imageSize = size;
-    UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
-    [color set];
-    UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
-    UIImage *colorImg = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return colorImg;
-}
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 GitHub, Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "RACSignal.h"
 
 /// The domain for errors originating in RACSignal operations.

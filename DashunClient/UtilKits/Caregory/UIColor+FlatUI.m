@@ -34,42 +34,6 @@
     
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
-//首页导航栏
-+ (UIColor *) homeListColor {
-    return [UIColor colorWithRed:8/255.f green:21/255.f blue:63/255.f alpha:1];
-}
-//日程导航栏
-+ (UIColor *) calendarColor {
-    return [UIColor colorFromHexCode:@"0x5995f5"];
-}
-//签到导航栏
-+ (UIColor *) siginColor {
-    return [UIColor colorWithRed:233/255.0 green: 182/255.0 blue: 77/255.0 alpha: 1.0];
-}
-+ (UIColor *) blendedColorWithForegroundColor:(UIColor *)foregroundColor
-                              backgroundColor:(UIColor *)backgroundColor
-                                 percentBlend:(CGFloat) percentBlend {
-    CGFloat onRed, offRed, newRed, onGreen, offGreen, newGreen, onBlue, offBlue, newBlue, onWhite, offWhite;
-    if ([foregroundColor getWhite:&onWhite alpha:nil]) {
-        onRed = onWhite;
-        onBlue = onWhite;
-        onGreen = onWhite;
-    }
-    else {
-        [foregroundColor getRed:&onRed green:&onGreen blue:&onBlue alpha:nil];
-    }
-    if ([backgroundColor getWhite:&offWhite alpha:nil]) {
-        offRed = offWhite;
-        offBlue = offWhite;
-        offGreen = offWhite;
-    }
-    else {
-        [backgroundColor getRed:&offRed green:&offGreen blue:&offBlue alpha:nil];
-    }
-    newRed = onRed * percentBlend + offRed * (1-percentBlend);
-    newGreen = onGreen * percentBlend + offGreen * (1-percentBlend);
-    newBlue = onBlue * percentBlend + offBlue * (1-percentBlend);
-    return [UIColor colorWithRed:newRed green:newGreen blue:newBlue alpha:1.0];
-}
+
 
 @end

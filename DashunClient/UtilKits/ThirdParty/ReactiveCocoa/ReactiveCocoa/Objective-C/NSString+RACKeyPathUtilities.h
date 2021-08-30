@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 GitHub, Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 // A private category of methods to extract parts of a key path.
 @interface NSString (RACKeyPathUtilities)

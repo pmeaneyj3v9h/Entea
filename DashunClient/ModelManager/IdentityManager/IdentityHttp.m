@@ -10,7 +10,6 @@
 
 @implementation IdentityHttp
 
-//系统账号密码登陆
 + (NSURLSessionDataTask*)loginWithEmail:(NSString*)account password:(NSString*)password handler:(completionHandler)handler {
     NSString *urlPath = @"Users/login";
     id parameter = @{@"account":account,@"password":password};

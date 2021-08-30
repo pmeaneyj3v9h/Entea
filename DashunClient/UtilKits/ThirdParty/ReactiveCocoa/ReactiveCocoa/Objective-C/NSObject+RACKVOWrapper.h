@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 GitHub. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @class RACDisposable;
 @class RACKVOTrampoline;

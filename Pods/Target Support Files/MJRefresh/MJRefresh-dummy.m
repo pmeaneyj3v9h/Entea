@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 @interface PodsDummy_MJRefresh : NSObject
 @end
 @implementation PodsDummy_MJRefresh

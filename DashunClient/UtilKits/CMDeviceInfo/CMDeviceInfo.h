@@ -6,8 +6,8 @@
 //  Copyright © 2015年 Maverick. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+@import Foundation;
+@import UIKit;
 
 #ifndef MAIN_SCREEN_WIDTH
 #define MAIN_SCREEN_WIDTH   [CMDeviceInfo mainScreenWidth]
@@ -39,9 +39,6 @@
 #ifndef IS_RETINA_55
 #define IS_RETINA_55  ([CMDeviceInfo mainScreenHeight] == 736.0F)
 #endif
-
-
-
 
 @interface CMDeviceInfo : NSObject
 

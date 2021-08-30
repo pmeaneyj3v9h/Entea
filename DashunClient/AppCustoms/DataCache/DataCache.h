@@ -6,7 +6,7 @@
 //  Copyright © 2015年 Maverick. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface DataCache : NSObject
 

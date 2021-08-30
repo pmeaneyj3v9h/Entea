@@ -9,7 +9,7 @@
 #import "UserManager.h"
 
 @interface UserManager () {
-//    RLMRealm *_rlmRealm;因为这是单线程创建的对象，所以不能跨线程访问，解决方法在下面
+    /**数据库路径*/
     NSString *_filePath;
 }
 
@@ -17,14 +17,21 @@
 
 @implementation UserManager
 
-- (instancetype)init
-{
+#pragma mark -- Init Methods
+
+- (instancetype)init {
     self = [super init];
     if (self) {
         
     }
     return self;
 }
+
+#pragma mark -- Life Cycle
+
+#pragma mark -- Class Private Methods
+
+#pragma mark -- Class Public Methods
 
 + (instancetype)manager {
     static UserManager *manager = nil;
@@ -35,8 +42,16 @@
     return manager;
 }
 
+#pragma mark -- Function Private Methods
+
+#pragma mark -- Function Public Methods
+
+#pragma mark -- Instance Private Methods
+
+#pragma mark -- Instance Public Methods
+
 #pragma mark -- User
-//更新用户数据
+
 - (void)updateUser:(User*)user {
     //每次修改的时候都重新获取该线程中的数据库对象，就可以解决多线程访问问题了
     RLMRealm *rLMRealm = [RLMRealm realmWithURL:[NSURL URLWithString:_filePath]];
@@ -45,7 +60,7 @@
     _user = user;
     [rLMRealm commitWriteTransaction];
 }
-//通过用户guid加载用户
+
 - (void)loadUserWithNo:(int)userNo {
     //得到用户对应的数据库路径
     NSArray *pathArr = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
@@ -61,7 +76,7 @@
         _user = [User new];
     }
 }
-//创建用户的数据库观察者
+
 - (RBQFetchedResultsController*)createUserFetchedResultsController {
     RLMRealm *rLMRealm = [RLMRealm realmWithURL:[NSURL URLWithString:_filePath]];
     RBQFetchedResultsController *fetchedResultsController = nil;

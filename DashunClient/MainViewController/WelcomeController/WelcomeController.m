@@ -11,8 +11,10 @@
 
 @interface WelcomeController () <UIScrollViewDelegate>
 
-@property (strong, nonatomic) UIScrollView *imageScrollView;//滚动视图
-@property (strong, nonatomic) UIButton *jumpBtn;//跳过
+/**滚动视图*/
+@property (strong, nonatomic) UIScrollView *imageScrollView;
+/**跳过*/
+@property (strong, nonatomic) UIButton *jumpBtn;
 
 @end
 
@@ -23,7 +25,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view from its nib.
     //创建滚动视图
-    NSArray<NSString*> *labelNameArr = @[@"大舜网络",@"诚心合作",@"遇见不一样的自己",@"原来你也可以这样"];
+    NSArray<NSString*> *labelNameArr = @[@"基础工程",@"一起学习",@"代表作品https://github.com/TheBloodElf/BangBang.git",@"项目介绍https://www.jianshu.com/p/fe8d765bc6dc"];
     _imageScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_WIDTH, MAIN_SCREEN_HEIGHT)];
     _imageScrollView.delegate = self;
     _imageScrollView.showsHorizontalScrollIndicator = NO;
@@ -34,6 +36,7 @@
         nameLabel.textColor = [UIColor blackColor];
         nameLabel.textAlignment = NSTextAlignmentCenter;
         nameLabel.text = labelNameArr[index];
+        nameLabel.numberOfLines = 0;
         [_imageScrollView addSubview:nameLabel];
     }
     _imageScrollView.contentSize = CGSizeMake(MAIN_SCREEN_WIDTH * labelNameArr.count, MAIN_SCREEN_HEIGHT);
@@ -47,6 +50,7 @@
     _jumpBtn.hidden = YES;
     [self.view addSubview:_jumpBtn];
 }
+
 - (void)jumpClicked:(id)sender {
     IdentityManager *identityManager = [IdentityManager manager];
     identityManager.identity.firstUseSoft = NO;
@@ -54,7 +58,9 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WelcomeDidFinish" object:nil];
 }
 
+
 #pragma mark -- UIScrollViewDelegate
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     _jumpBtn.hidden = (scrollView.contentOffset.x / MAIN_SCREEN_WIDTH != 3);
 }

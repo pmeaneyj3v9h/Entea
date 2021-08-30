@@ -9,12 +9,10 @@
 
 #import "AppCustoms.h"
 
-@implementation AppCustoms
-
-#pragma mark -
-#pragma mark - SINGLETON
-
+/**AppCustoms单例对象*/
 static AppCustoms * __singleton__;
+
+@implementation AppCustoms
 
 + (AppCustoms *)customs {
     static dispatch_once_t predicate;
@@ -22,7 +20,6 @@ static AppCustoms * __singleton__;
     return __singleton__;
 }
 
-#pragma mark -
 #pragma mark - Init
 
 - (instancetype)init {

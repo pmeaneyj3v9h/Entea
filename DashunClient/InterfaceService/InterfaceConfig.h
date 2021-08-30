@@ -6,7 +6,7 @@
 //  Copyright © 2016年 com.lottak. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 extern NSString *const KBSSDKAPIURL;
 

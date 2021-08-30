@@ -10,7 +10,7 @@
 #import "EXTRuntimeExtensions.h"
 
 #import <ctype.h>
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import <libkern/OSAtomic.h>
 #import <objc/message.h>
 #import <pthread.h>

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 GitHub. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import <MapKit/MapKit.h>
 
 @class RACSignal;

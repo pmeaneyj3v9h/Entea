@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 GitHub, Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 // A simplified description of the object, which does not invoke -description
 // (and thus should be much faster in many cases).

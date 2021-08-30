@@ -34,7 +34,6 @@ NSString * const IDFV_APP_SUFFIX = @"-fadein-ios";
     return type;
 }
 
-
 + (CGFloat)mainScreenWidth {
     return [UIScreen mainScreen].bounds.size.width;
     
@@ -44,7 +43,12 @@ NSString * const IDFV_APP_SUFFIX = @"-fadein-ios";
     return [UIScreen mainScreen].bounds.size.height;
 }
 
-//UUID（Universally Unique Identifier）:通用唯一识别码，每次生成均不一样，所以第一次生成后需要保存到钥匙串，这样即使应用删除再重装仍然可以从钥匙串得到它
+
+/**
+ UUID（Universally Unique Identifier）:通用唯一识别码，每次生成均不一样，所以第一次生成后需要保存到钥匙串，这样即使应用删除再重装仍然可以从钥匙串得到它
+
+ @return uuid
+ */
 + (NSString *)uuid {
     CFUUIDRef puuid = CFUUIDCreate( nil );
     CFStringRef uuidString = CFUUIDCreateString( nil, puuid );

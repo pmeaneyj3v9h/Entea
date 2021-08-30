@@ -24,6 +24,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(loginClicked:)];
 }
+
 - (void)loginClicked:(UIBarButtonItem*)item {
 //    [self.navigationController.view showLoadingTips:@""];
     //登录逻辑
@@ -37,6 +38,7 @@
         User *user = [User new];
 //        [user mj_setKeyValues:data];
         user.userNo = 10;
+        [[UserManager manager] loadUserWithNo:user.userNo];
         [[UserManager manager] updateUser:user];
         //记录登录信息
         [IdentityManager manager].identity.userNo = user.userNo;

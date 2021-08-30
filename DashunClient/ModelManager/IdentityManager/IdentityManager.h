@@ -6,7 +6,8 @@
 //  Copyright © 2016年 com.luohaifang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 #import "Identity.h"
 
 @interface IdentityManager : NSObject
@@ -15,11 +16,19 @@
 
 + (instancetype)manager;
 
-//从本地读取登录缓存信息
+/**
+ 从本地读取登录缓存信息
+ */
 - (void)readAuthorizeData;
-//把登录信息存入本地
+
+/**
+ 把登录信息存入本地
+ */
 - (void)saveAuthorizeData;
-//登出
+
+/**
+ 登出
+ */
 - (void)logOut;
 
 @end

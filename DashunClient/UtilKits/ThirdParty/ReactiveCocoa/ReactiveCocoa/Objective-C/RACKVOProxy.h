@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 GitHub, Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 /// A singleton that can act as a proxy between a KVO observation and a RAC
 /// subscriber, in order to protect against KVO lifetime issues.
